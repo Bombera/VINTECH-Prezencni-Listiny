@@ -1,0 +1,1 @@
+const app=require('./server'),s=app.listen(0,'127.0.0.1',async()=>{const p=s.address().port,r=await fetch(`http://127.0.0.1:${p}/health`),j=await r.json();console.log(r.ok&&j.build==='5.2'?'BUILD5_2_TEST_OK':'FAIL');if(!r.ok||j.build!=='5.2')process.exitCode=1;s.close()});
